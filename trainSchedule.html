@@ -1,31 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Choo Choo!</title>
+	<head>
+		<meta charset="utf-8">
+		<title>Choo Choo!</title>
 
-<!--_______________________RESET____________________________-->
-	<link rel="stylesheet" type="text/css" href="reset.css">
+	<!--_______________________RESET____________________________-->
+		<link rel="stylesheet" type="text/css" href="reset.css">
 
-<!--_______________________BOOTSTRAP________________________-->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<!--______________________Firebase Reference________________-->
-    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+	<!--_______________________BOOTSTRAP________________________-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<!--______________________Firebase Reference________________-->
+	    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
 
-<!--______________________Moment.js Reference_______________-->
-    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+	<!--______________________Moment.js Reference_______________-->
+	    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
-<!--_______________________CSS______________________________-->
-	<link rel="stylesheet" type="text/css" href="trainSchedule.css">
-</head>
-<body>
+	<!--_______________________CSS______________________________-->
+		<link rel="stylesheet" type="text/css" href="trainSchedule.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="jumbotron">
+			<h1>Train Schedule</h1>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+				<!-- Current Trains-->
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+						<h3 class="panel-title"><strong>Current Train Schedule</strong></h3>
+						</div>
+						<div class="panel-body">
+							<table class="table table-hover" id='train-table'>
+							<thead>
+								<tr>
+								<th>Train Name</th>
+								<th>Destination</th>
+								<th>Frequency</th>
+								<th>Next Arrival</th>
+								<th>Minutes Away</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+							</table>
+						</div>
+					</div>
+				<!-- Add train  -->
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+						<h3 class="panel-title"><strong>Add Train</strong></h3>
+						</div>
+						<div class="panel-body">
+							<!-- Entry Form -->
+							<form>
+							<div class="form-group">
+							<label for="train-name-input">Train Name</label>
+							<input class="form-control" id="train-name-input" type="text">
+							</div>
+							<div class="form-group">
+							<label for="role-input">Destination</label>
+							<input class="form-control" id="role-input" type="text">
+							</div>
+							<div class="form-group">
+							<label for="start-input">First Train Time (HH:mm-military time)</label>
+							<input class="form-control" id="start-input" type="text">
+							</div>
+							<div class="form-group">
+							<label for="rate-input">Frequency(min)</label>
+							<input class="form-control" id="rate-input" type="text">
+							</div>
+							<button class="btn btn-primary" id="add-train-btn" type="submit">Submit</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-	
-<!--_______________________jQuery___________________________-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!--_______________________javaScript_______________________-->
-	<script type="text/javascript" src="trainSchedule.js"></script>
-</body>
+	<!--_______________________BOOTSTRAP jQuery_________________-->
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>		
+	<!--_______________________jQuery___________________________-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!--_______________________javaScript_______________________-->
+		<script type="text/javascript" src="trainSchedule.js"></script>
+	</body>
 </html>
